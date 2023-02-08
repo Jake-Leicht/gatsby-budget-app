@@ -6,5 +6,6 @@ module.exports = {
     title: `gatsby-expense-budget-app`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: ["gatsby-plugin-sass"]
+  plugins: ["gatsby-plugin-sass"],
+  pathPrefix: "/react-budget-app.github.io"
 };
