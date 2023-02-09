@@ -1,0 +1,318 @@
+// ? Styling Colors
+$lime: lime;
+$red: red;
+$purple: #695ab4;
+$pageMargin: 20vw;
+$pageWidth: 60vw;
+$fontSize: 16pt;
+$fontWeight: 600;
+$lineHeight: 0.5;
+$borderRadius: 6px;
+// * Budget Sheet
+$background: whitesmoke;
+$negative: #F08080;
+$gray: #dbdcde;
+$blue: #036df5;
+$lightBlue: #c1defc;
+$green: #cdead6;
+$black: #343434;
+
+@mixin input-style(){
+    font-size: 14pt;
+    font-weight: $fontWeight;
+    background-color: white;
+    margin: 6px 0px;
+    border: none;
+    border-radius: $borderRadius;
+    height: 3vh;
+    display: block;
+    width: 99%;
+}
+
+@mixin budgetApplication-btn-style(){
+    background-color: $blue;
+    border: none;
+    border-radius: $borderRadius;
+    color: whitesmoke;
+    width: 8vw;
+    height: 3vh;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+}
+
+@mixin budgetApplication-btn-style-hover(){
+    background-color: white;
+    color: $blue;
+    border: 2px solid $blue;
+}
+
+@mixin title(){
+    text-align: center;
+    border-bottom: 2px solid gray;
+    width: 52vw;
+}
+
+.app{
+    width: $pageWidth;
+    max-width: 700px;
+    margin: 0px auto;
+
+    .header-container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .title{
+        @include title;
+    }
+
+    .img-container{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        column-gap: 12px;
+        margin: 8vh 0vw;
+
+        img{
+            width: 20vw;
+            height: 20vh;
+        }
+    }
+}
+
+.application-container{
+    margin-top: 80px;
+    height: 30vh;
+    line-height: 0.9;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+
+    .input-style{
+        @include input-style;
+    }
+
+    .application-title{
+        border-bottom: 2px solid gray;
+    }
+    
+    .application-container p{
+        line-height: $lineHeight;
+    }
+    
+    .application-btn{
+        font-size: 12pt;
+        font-weight: $fontWeight;
+        color: white;
+        background-color: $purple;
+        border: none;
+        border-radius: $borderRadius;
+        width: 100%;
+        height: 12%;
+    }
+
+    .application-btn:hover{
+        font-size: 13pt;
+    }
+}
+
+.budget-app{
+    .header-container{
+        display: flex;
+        justify-content: space-evenly;
+        
+        .title{
+            @include title;
+        }
+    }
+}
+
+.breakdown{
+    height: 25vh;
+    line-height: $lineHeight;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+
+    .balance{
+        font-size: 24pt;
+    }
+
+    .breakdown-tracking-container{
+        background-color: white;
+        display: flex;
+        text-align: center;
+        box-shadow: 2px 2px 5px gray;
+
+    .income-container, .expense-container{
+        width: 50%;
+        border-right: 1px solid lightgray;
+    }
+    
+    .income-value{
+        color: $lime;
+    }
+    
+    .expense-value{
+        color: $red;
+    }
+    }
+}
+
+.budgetApplication-container{
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+
+    .budgetApplication-title{
+        border-bottom: 2px solid gray;
+    }
+    
+    .budgetApplication-lbl-container, .budgetApplication-input-container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 5%;
+
+        .input-style{
+            @include input-style;
+        }
+
+        .budgetApplication-amount-input{
+            text-align: right;
+        }
+    }
+
+    .budgetApplication-btn-style{
+        @include budgetApplication-btn-style;
+    }
+
+    .budgetApplication-btn-style:hover{
+        @include budgetApplication-btn-style-hover()
+    }
+}
+
+.budgetBreakdown-container{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 100vw;
+    font-size: 14pt;
+    font-weight: $fontWeight;
+
+    .budgetBreakdown-item{
+        width: 30vw;
+        height: 10vh;
+        border-radius: $borderRadius;
+
+        .budgetApplication-btn-style{
+            @include budgetApplication-btn-style;
+        }
+
+        .budgetApplication-btn-style:hover{
+            @include budgetApplication-btn-style-hover()
+        }
+    }
+
+    .budgetBreakdown-item:nth-child(1){
+        font-size: 14pt;
+        line-height: $lineHeight;
+        background-color: $gray;
+    }
+
+    .budgetBreakdown-item:nth-child(2){
+        background-color: $green;
+    }
+    
+    .budgetBreakdown-item:nth-child(3){
+        background-color: $lightBlue;
+    }
+}
+
+.budgetExpense-container{
+    border: 2px solid gray;
+    width: calc(100% - 10px);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 6px;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    margin-left: 0px;
+
+    .budgetExpense-content{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 30%;
+
+        .budgetExpense-amount{
+            background-color: $blue;
+            color: white;
+            padding: 6px;
+            border-radius: 50%;
+        }
+        
+        .delete-btn{
+            color: white;
+            background-color: $black;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+        
+        .delete-btn:hover{
+            font-size: 14pt;
+            font-weight: 800;
+        }
+    }
+}
+
+.expenseHistory-container{
+    margin-top: -50px;
+
+    .input-style{
+        @include input-style;
+    }
+}
+
+.graph-container{
+    height: 50vh;
+    margin-top: -40px;
+}
+
+.navbar-list{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: 85vw;
+    margin-left: 5vw;
+
+    .navbar-item{
+        text-decoration: none;
+        font-weight: $fontWeight;
+        font-size: $fontSize;
+        color: $black;
+        border: 2px solid $black;
+        border-radius: $borderRadius;
+        padding: 6px;
+    }
+
+    .navbar-item:hover{
+        background-color: $gray;
+    }
+}
+
+.transaction-container{
+    display: flex;
+    height: 3vh;
+    align-items: center;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    background-color: white;
+    border-radius: $borderRadius;
+    padding: 4px;
+    margin: 6px;
+
+    .transaction-description, .transaction-amount{
+        width: 50%;
+    }
+    
+    .transaction-amount{
+        text-align: right;
+    }
+}
