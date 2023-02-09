@@ -1,6 +1,7 @@
 {
   "name": "gatsby-expense-budget-app",
   "version": "1.0.0",
+  "homepage": "https://jake-leicht.github.io/gatsby-budget-app/",
   "private": true,
   "description": "gatsby-expense-budget-app",
   "author": "Jake-Leicht",
@@ -13,7 +14,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "predeploy": "npm run build",
+    "deploy": "gatsby build && gh-pages -b master -d public"
   },
   "dependencies": {
     "gatsby": "^5.5.0",
