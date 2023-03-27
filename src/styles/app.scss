@@ -55,7 +55,8 @@ $black: #343434;
 .app{
     width: $pageWidth;
     max-width: 700px;
-    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
 
     .header-container{
         display: flex;
@@ -63,17 +64,17 @@ $black: #343434;
     }
     .title{
         @include title;
+        width: 94vw;
     }
 
     .img-container{
-        display: grid;
-        grid-template-columns: auto auto auto;
-        column-gap: 12px;
-        margin-top: 8vh;
+        width: 94vw;
+        display: flex;
+        justify-content: space-evenly;
 
         img{
-            width: 20vw;
-            height: 20vh;
+            width: clamp(50px, 20vw, 300px);
+            height: clamp(50px, 20vw, 300px);
         }
     }
 }
